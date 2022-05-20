@@ -18,7 +18,7 @@ public class Hajo {
         
     }
     
-    public String talalat(int poz){
+    public String talalat(){
         return "Mellé";
     }
 }
