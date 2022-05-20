@@ -5,6 +5,7 @@
  */
 package torpedojatek;
 
+import java.util.Random;
 
 /**
  *
@@ -15,10 +16,27 @@ public class Hajo {
     int talal;
     
     public Hajo(){
-        
+        setPozicio(pozicio);
     }
     
-    public String talalat(){
+    public void setPozicio(int[] pozicio){
+        Random randomHely = new Random();
+        int kezdoPoz = randomHely.nextInt(5);
+        System.out.println("Kezdő elhelyezkedése a hajónak: "+kezdoPoz);
+        for (int i = 0; i < pozicio.length; i++) {
+            this.pozicio[i] = kezdoPoz;
+            kezdoPoz++;
+        }
+    }
+    
+    public String talalat(int poz){
+        int i = 0;
+        while(i<pozicio.length && !(poz == pozicio[i])){
+            i++;
+        }
+        if(i<pozicio.length){
+            return "Talált";
+        }
         return "Mellé";
     }
 }
